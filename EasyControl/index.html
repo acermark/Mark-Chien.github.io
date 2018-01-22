@@ -7,8 +7,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
 </head>
-<body>
-<font id="title">Easy Control</font><p><br>
+<body><font id="title">Easy Control a</font><p><br>
 
 <div id="content" class="row">
 	<div class="col-sm-12  col-xs-12">
@@ -215,7 +214,23 @@
 				//cpf.request('["analogWrite", 3, 0]'); // turn off 
 				document.getElementById("title").innerHTML = "Turn off fan";
 			}
-	       	} else if(Result.includes("小星星")) { // Sing little star
+	       	} else if (Result.includes("客廳開風扇")) {
+	       		if(cpf) {
+
+				//cpf.request('ttyACM0', '["analogWrite", 3, 255]'); // turn on
+				cpf.request('board1', '["analogWrite", 3, 255]'); // turn on
+				//cpf.request('["analogWrite", 3, 120]'); // turn on 
+				document.getElementById("title").innerHTML = "Turn on fan";
+			}
+	       	} else if (Result.includes("客廳關掉風扇")) {
+	       		if(cpf) {
+
+				//cpf.request('ttyACM0', '["analogWrite", 3, 0]'); // turn off
+				cpf.request('board1', '["analogWrite", 3, 0]'); // turn off
+				//cpf.request('["analogWrite", 3, 0]'); // turn off 
+				document.getElementById("title").innerHTML = "Turn off fan";
+			}
+		} else if(Result.includes("小星星")) { // Sing little star
 			console.log('Sing ' + Result);
 			document.getElementById("title").innerHTML = Result;
 			if(cpf) {
