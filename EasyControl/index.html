@@ -8,7 +8,7 @@
 
 </head>
 <body>
-<font id="title">Easy Controlbb</font><p><br>
+<font id="title">Easy Controlcc</font><p><br>
 
 <div id="content" class="row">
 	<div class="col-sm-12  col-xs-12">
@@ -325,7 +325,9 @@
 			cpf.sleep(500);
 			SetSpeech("off")
 		} else if(!Result.localeCompare("朗讀")) {
-			SetSpeech("on")
+			SetSpeech("On", "zh-TW", "這是測試", 0.1, 0.1);
+		} else if(!Result.localeCompare("測試")) {
+			SetSpeech("Off", "zh-TW", "只讀一次", 0.1, 0.1);
 		} else if(!Result.localeCompare("現在天氣")) {
 			GetCurrentWeather()
 		} else if(!Result.localeCompare("現在時間")) {
